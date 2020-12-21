@@ -9,7 +9,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['GET',POST'])
 def predict():
     input_features = [x for x in request.form.values()]
     age = input_features[0]
